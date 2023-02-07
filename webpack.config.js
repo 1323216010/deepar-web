@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins:[ // 装的是实例化对象
   new HtmlWebpackPlugin({
+      minify: false,
       filename:'index.html',//打包后的filename是什么
       template:path.resolve(__dirname,'./public/index.html'),//打包的是谁
       chunks:['index'],
