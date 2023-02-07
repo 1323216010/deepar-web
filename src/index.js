@@ -1,19 +1,25 @@
+import { DeepAR } from 'deepar';
+import deeparWasm from 'deepar/wasm/deepar.wasm';
+import faceTrackingModel from 'deepar/models/face/models-68-extreme.bin';
+import segmentationModel from 'deepar/models/segmentation/segmentation-160x160-opt.bin';
+
+
 const canvas = document.getElementById('deepar-canvas');
 const deepAR = new DeepAR({
   licenseKey: 'e7354dce189b6f111ce2d13d93e484a78b25001e569db34d5b3cfc185cebddc0e0edc228d207230b',
   canvas: canvas,
-  deeparWasmPath: 'lib/wasm/deepar.wasm',
+  deeparWasmPath: deeparWasm,
   callbacks: {
     onInitialize: () => {
       deepAR.startVideo(true);
     },
   },
   segmentationConfig: {
-    modelPath: 'lib/models/segmentation/segmentation-160x160-opt.bin',
+    modelPath: segmentationModel,
   },
 });
 
-deepAR.downloadFaceTrackingModel('lib/models/face/models-68-extreme.bin');
+deepAR.downloadFaceTrackingModel(faceTrackingModel);
 
 const effects = [
   './effects/test.deepar',
