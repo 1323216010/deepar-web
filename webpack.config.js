@@ -27,7 +27,7 @@ module.exports = {
   new HtmlWebpackPlugin({
       minify: false,
       filename:'index.html',//打包后的filename是什么
-      template:path.resolve(__dirname,'./public/index.html'),//打包的是谁
+      template:path.resolve(__dirname,'./src/index.html'),//打包的是谁
       chunks:['index'],
       // chunks:['jquery','index'],//入口文件是哪一个，可以写多个入口文件
       excludeChunks:['node_modules'] // 需要排除哪个文件
