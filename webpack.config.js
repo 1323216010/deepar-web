@@ -4,13 +4,12 @@ const path = require('path') // path模块主要是为了解决绝对路径问�
 const MiniClassExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
-
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     clean: true,
   },
   target: 'web',
